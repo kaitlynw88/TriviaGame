@@ -39,15 +39,15 @@ function TriviaList() {
         <h2>Trivia List</h2>
         <ProgressBar listLength={triviaList.length} questionNumber = {number + 1}/>
         {
-            triviaList.map((question)=>{
+            triviaList.map((question, index)=>{
                 const arrayIndex = triviaList.indexOf(question)
                 if(arrayIndex === number){
                     return(
-                        <>
+                        <div key={index}>
                             <Question indQuestion={question} key={question.id}/>
     
                             <button onClick={advanceQuestion}>Advance</button>
-                        </>
+                        </div>
                     )
 
                 }
